@@ -1,0 +1,437 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		963EE9AE2CE772FC0097D509 /* Tymex_Currency_ConverterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963EE9AD2CE772FC0097D509 /* Tymex_Currency_ConverterApp.swift */; };
+		963EE9B02CE772FC0097D509 /* ConverterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963EE9AF2CE772FC0097D509 /* ConverterView.swift */; };
+		963EE9B22CE772FD0097D509 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 963EE9B12CE772FD0097D509 /* Assets.xcassets */; };
+		963EE9B52CE772FD0097D509 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 963EE9B42CE772FD0097D509 /* Preview Assets.xcassets */; };
+		963EE9C12CE784540097D509 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963EE9C02CE784540097D509 /* Currency.swift */; };
+		963EE9C32CE784890097D509 /* ConverterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963EE9C22CE784890097D509 /* ConverterViewModel.swift */; };
+		963EE9C62CE785910097D509 /* NetworkingStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963EE9C52CE785910097D509 /* NetworkingStatus.swift */; };
+		963EE9C82CE837880097D509 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 963EE9C72CE837880097D509 /* data.json */; };
+		963EE9CA2CE86D640097D509 /* Feedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963EE9C92CE86D640097D509 /* Feedback.swift */; };
+		963EE9D12CE87A910097D509 /* MyBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963EE9D02CE87A910097D509 /* MyBackground.swift */; };
+		963EE9D32CE8804D0097D509 /* ExchangeRatesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963EE9D22CE8804D0097D509 /* ExchangeRatesView.swift */; };
+		963EE9D52CE882DD0097D509 /* ExchangeRatesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963EE9D42CE882DD0097D509 /* ExchangeRatesViewModel.swift */; };
+		963EE9D72CE887A40097D509 /* FetchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963EE9D62CE887A40097D509 /* FetchService.swift */; };
+		963EE9D92CE8948E0097D509 /* FileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963EE9D82CE8948E0097D509 /* FileService.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		963EE9AA2CE772FC0097D509 /* Tymex Currency Converter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tymex Currency Converter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		963EE9AD2CE772FC0097D509 /* Tymex_Currency_ConverterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tymex_Currency_ConverterApp.swift; sourceTree = "<group>"; };
+		963EE9AF2CE772FC0097D509 /* ConverterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverterView.swift; sourceTree = "<group>"; };
+		963EE9B12CE772FD0097D509 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		963EE9B42CE772FD0097D509 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		963EE9C02CE784540097D509 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
+		963EE9C22CE784890097D509 /* ConverterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverterViewModel.swift; sourceTree = "<group>"; };
+		963EE9C52CE785910097D509 /* NetworkingStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingStatus.swift; sourceTree = "<group>"; };
+		963EE9C72CE837880097D509 /* data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
+		963EE9C92CE86D640097D509 /* Feedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feedback.swift; sourceTree = "<group>"; };
+		963EE9D02CE87A910097D509 /* MyBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBackground.swift; sourceTree = "<group>"; };
+		963EE9D22CE8804D0097D509 /* ExchangeRatesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRatesView.swift; sourceTree = "<group>"; };
+		963EE9D42CE882DD0097D509 /* ExchangeRatesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRatesViewModel.swift; sourceTree = "<group>"; };
+		963EE9D62CE887A40097D509 /* FetchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchService.swift; sourceTree = "<group>"; };
+		963EE9D82CE8948E0097D509 /* FileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileService.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		963EE9A72CE772FC0097D509 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		963EE9A12CE772FC0097D509 = {
+			isa = PBXGroup;
+			children = (
+				963EE9AC2CE772FC0097D509 /* Tymex Currency Converter */,
+				963EE9AB2CE772FC0097D509 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		963EE9AB2CE772FC0097D509 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				963EE9AA2CE772FC0097D509 /* Tymex Currency Converter.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		963EE9AC2CE772FC0097D509 /* Tymex Currency Converter */ = {
+			isa = PBXGroup;
+			children = (
+				963EE9CF2CE87A6F0097D509 /* UIComponents */,
+				963EE9C42CE785840097D509 /* Enums */,
+				963EE9BF2CE77CF10097D509 /* Services */,
+				963EE9BE2CE77CEE0097D509 /* Models */,
+				963EE9BD2CE77CEC0097D509 /* Views */,
+				963EE9BB2CE77CE00097D509 /* ViewModels */,
+				963EE9AD2CE772FC0097D509 /* Tymex_Currency_ConverterApp.swift */,
+				963EE9B12CE772FD0097D509 /* Assets.xcassets */,
+				963EE9B32CE772FD0097D509 /* Preview Content */,
+				963EE9C72CE837880097D509 /* data.json */,
+			);
+			path = "Tymex Currency Converter";
+			sourceTree = "<group>";
+		};
+		963EE9B32CE772FD0097D509 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				963EE9B42CE772FD0097D509 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		963EE9BB2CE77CE00097D509 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				963EE9C22CE784890097D509 /* ConverterViewModel.swift */,
+				963EE9D42CE882DD0097D509 /* ExchangeRatesViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		963EE9BD2CE77CEC0097D509 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				963EE9AF2CE772FC0097D509 /* ConverterView.swift */,
+				963EE9D22CE8804D0097D509 /* ExchangeRatesView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		963EE9BE2CE77CEE0097D509 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				963EE9C02CE784540097D509 /* Currency.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		963EE9BF2CE77CF10097D509 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				963EE9D62CE887A40097D509 /* FetchService.swift */,
+				963EE9D82CE8948E0097D509 /* FileService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		963EE9C42CE785840097D509 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				963EE9C52CE785910097D509 /* NetworkingStatus.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		963EE9CF2CE87A6F0097D509 /* UIComponents */ = {
+			isa = PBXGroup;
+			children = (
+				963EE9D02CE87A910097D509 /* MyBackground.swift */,
+				963EE9C92CE86D640097D509 /* Feedback.swift */,
+			);
+			path = UIComponents;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		963EE9A92CE772FC0097D509 /* Tymex Currency Converter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 963EE9B82CE772FD0097D509 /* Build configuration list for PBXNativeTarget "Tymex Currency Converter" */;
+			buildPhases = (
+				963EE9A62CE772FC0097D509 /* Sources */,
+				963EE9A72CE772FC0097D509 /* Frameworks */,
+				963EE9A82CE772FC0097D509 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Tymex Currency Converter";
+			productName = "Tymex Currency Converter";
+			productReference = 963EE9AA2CE772FC0097D509 /* Tymex Currency Converter.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		963EE9A22CE772FC0097D509 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1540;
+				LastUpgradeCheck = 1540;
+				TargetAttributes = {
+					963EE9A92CE772FC0097D509 = {
+						CreatedOnToolsVersion = 15.4;
+					};
+				};
+			};
+			buildConfigurationList = 963EE9A52CE772FC0097D509 /* Build configuration list for PBXProject "Tymex Currency Converter" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 963EE9A12CE772FC0097D509;
+			productRefGroup = 963EE9AB2CE772FC0097D509 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				963EE9A92CE772FC0097D509 /* Tymex Currency Converter */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		963EE9A82CE772FC0097D509 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				963EE9B52CE772FD0097D509 /* Preview Assets.xcassets in Resources */,
+				963EE9C82CE837880097D509 /* data.json in Resources */,
+				963EE9B22CE772FD0097D509 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		963EE9A62CE772FC0097D509 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				963EE9C12CE784540097D509 /* Currency.swift in Sources */,
+				963EE9D12CE87A910097D509 /* MyBackground.swift in Sources */,
+				963EE9B02CE772FC0097D509 /* ConverterView.swift in Sources */,
+				963EE9D32CE8804D0097D509 /* ExchangeRatesView.swift in Sources */,
+				963EE9D92CE8948E0097D509 /* FileService.swift in Sources */,
+				963EE9D72CE887A40097D509 /* FetchService.swift in Sources */,
+				963EE9CA2CE86D640097D509 /* Feedback.swift in Sources */,
+				963EE9D52CE882DD0097D509 /* ExchangeRatesViewModel.swift in Sources */,
+				963EE9C32CE784890097D509 /* ConverterViewModel.swift in Sources */,
+				963EE9C62CE785910097D509 /* NetworkingStatus.swift in Sources */,
+				963EE9AE2CE772FC0097D509 /* Tymex_Currency_ConverterApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		963EE9B62CE772FD0097D509 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		963EE9B72CE772FD0097D509 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		963EE9B92CE772FD0097D509 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Tymex Currency Converter/Preview Content\"";
+				DEVELOPMENT_TEAM = 4B2UGH94B5;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.learning.Tymex-Currency-Converter";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		963EE9BA2CE772FD0097D509 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Tymex Currency Converter/Preview Content\"";
+				DEVELOPMENT_TEAM = 4B2UGH94B5;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.learning.Tymex-Currency-Converter";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		963EE9A52CE772FC0097D509 /* Build configuration list for PBXProject "Tymex Currency Converter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				963EE9B62CE772FD0097D509 /* Debug */,
+				963EE9B72CE772FD0097D509 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		963EE9B82CE772FD0097D509 /* Build configuration list for PBXNativeTarget "Tymex Currency Converter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				963EE9B92CE772FD0097D509 /* Debug */,
+				963EE9BA2CE772FD0097D509 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 963EE9A22CE772FC0097D509 /* Project object */;
+}
