@@ -15,7 +15,7 @@
 
 - Dark Mode
 
-- Reload: user can reload to get the lastest records from server.
+- Reload: user can reload to get the lastest records from server
 
 ### Folder Structure
 
@@ -40,12 +40,12 @@
 
 - Replace API Keys if mine is invalid or out of available calls
 
-- Replace base currency to which you prefers
+- Replace base currency to which you prefer
 
 ## 3. Notes And Challenges
 
 **Notes**
-- You can easily replace the `API Key` & `Base Currency` to your own one in constructor of FetchService class in `Tymex Currency Converter/Services/FetchService.swift`
+- You can easily replace the `API Key` & `Base Currency` to your own one in `constructor` of `FetchService` class in `Tymex Currency Converter/Services/FetchService.swift`
 
 **Challenges**
 - I believe that this app would be more wonderful if it has a additional feature like having a figure for time-series changes in exchange rates for each currencies. At first, I did plan to add this feature but the API is not available for free subscription.
