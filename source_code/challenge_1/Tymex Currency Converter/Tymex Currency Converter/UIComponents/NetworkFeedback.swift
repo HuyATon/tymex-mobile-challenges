@@ -7,17 +7,21 @@
 
 import SwiftUI
 
-struct Feedback: View {
+struct NetworkFeedback: View {
     
     @Binding var message: String
-    @Binding var status: Status
+    @Binding var status: NetworkingStatus
     
     var body: some View {
         
         switch status {
             case .notStarted:
                 EmptyView()
-                
+            case .loading:
+                ProgressView()
+                    .padding()
+                    .background(.ultraThinMaterial)
+                    .clipShape(.rect(cornerRadius: 15.0))
             case .failed, .successful:
                 Label(message, systemImage: status == .failed ? "bubble.left.and.exclamationmark.bubble.right.fill" : "checkmark")
                     .symbolEffect(.pulse)
@@ -26,7 +30,7 @@ struct Feedback: View {
                     .background(status == .successful ? AnyShapeStyle(.ultraThickMaterial) : AnyShapeStyle(.clear) )
                     .clipShape(.rect(cornerRadius: 15.0))
                     .onAppear {
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 2.5, execute: {
                             withAnimation {
                                 self.status = .notStarted
                             }

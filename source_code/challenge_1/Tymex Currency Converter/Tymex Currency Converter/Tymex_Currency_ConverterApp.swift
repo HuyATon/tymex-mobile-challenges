@@ -12,6 +12,7 @@ struct Tymex_Currency_ConverterApp: App {
     var body: some Scene {
         WindowGroup {
             ConverterView()
+                .fontDesign(.rounded)
         }
     }
 }

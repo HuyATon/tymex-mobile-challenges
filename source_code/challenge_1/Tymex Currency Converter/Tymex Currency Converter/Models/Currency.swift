@@ -11,9 +11,10 @@ import Foundation
 struct Currency {
     
     var name: String
-    var base: String
     var value: Double
     
-    
+    func convertTo(_ otherCurrency: Currency, withAmount amount: Double) -> Double {
+        return amount / self.value * otherCurrency.value
+    }
    
 }

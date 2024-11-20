@@ -15,12 +15,15 @@
 		963EE9C32CE784890097D509 /* ConverterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963EE9C22CE784890097D509 /* ConverterViewModel.swift */; };
 		963EE9C62CE785910097D509 /* NetworkingStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963EE9C52CE785910097D509 /* NetworkingStatus.swift */; };
 		963EE9C82CE837880097D509 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 963EE9C72CE837880097D509 /* data.json */; };
-		963EE9CA2CE86D640097D509 /* Feedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963EE9C92CE86D640097D509 /* Feedback.swift */; };
+		963EE9CA2CE86D640097D509 /* NetworkFeedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963EE9C92CE86D640097D509 /* NetworkFeedback.swift */; };
 		963EE9D12CE87A910097D509 /* MyBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963EE9D02CE87A910097D509 /* MyBackground.swift */; };
 		963EE9D32CE8804D0097D509 /* ExchangeRatesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963EE9D22CE8804D0097D509 /* ExchangeRatesView.swift */; };
 		963EE9D52CE882DD0097D509 /* ExchangeRatesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963EE9D42CE882DD0097D509 /* ExchangeRatesViewModel.swift */; };
 		963EE9D72CE887A40097D509 /* FetchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963EE9D62CE887A40097D509 /* FetchService.swift */; };
 		963EE9D92CE8948E0097D509 /* FileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963EE9D82CE8948E0097D509 /* FileService.swift */; };
+		BE950BE52CED8654000635D6 /* Feedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE950BE42CED8654000635D6 /* Feedback.swift */; };
+		BE950BE72CED866C000635D6 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE950BE62CED866C000635D6 /* Status.swift */; };
+		BE950BE92CED8C6A000635D6 /* FetchedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE950BE82CED8C6A000635D6 /* FetchedData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,12 +36,16 @@
 		963EE9C22CE784890097D509 /* ConverterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverterViewModel.swift; sourceTree = "<group>"; };
 		963EE9C52CE785910097D509 /* NetworkingStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingStatus.swift; sourceTree = "<group>"; };
 		963EE9C72CE837880097D509 /* data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
-		963EE9C92CE86D640097D509 /* Feedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feedback.swift; sourceTree = "<group>"; };
+		963EE9C92CE86D640097D509 /* NetworkFeedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkFeedback.swift; sourceTree = "<group>"; };
 		963EE9D02CE87A910097D509 /* MyBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBackground.swift; sourceTree = "<group>"; };
 		963EE9D22CE8804D0097D509 /* ExchangeRatesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRatesView.swift; sourceTree = "<group>"; };
 		963EE9D42CE882DD0097D509 /* ExchangeRatesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRatesViewModel.swift; sourceTree = "<group>"; };
 		963EE9D62CE887A40097D509 /* FetchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchService.swift; sourceTree = "<group>"; };
 		963EE9D82CE8948E0097D509 /* FileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileService.swift; sourceTree = "<group>"; };
+		BE950BE32CED7D6B000635D6 /* Tymex-Currency-Converter-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Tymex-Currency-Converter-Info.plist"; sourceTree = SOURCE_ROOT; };
+		BE950BE42CED8654000635D6 /* Feedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feedback.swift; sourceTree = "<group>"; };
+		BE950BE62CED866C000635D6 /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
+		BE950BE82CED8C6A000635D6 /* FetchedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchedData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +78,7 @@
 		963EE9AC2CE772FC0097D509 /* Tymex Currency Converter */ = {
 			isa = PBXGroup;
 			children = (
+				BE950BE32CED7D6B000635D6 /* Tymex-Currency-Converter-Info.plist */,
 				963EE9CF2CE87A6F0097D509 /* UIComponents */,
 				963EE9C42CE785840097D509 /* Enums */,
 				963EE9BF2CE77CF10097D509 /* Services */,
@@ -115,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				963EE9C02CE784540097D509 /* Currency.swift */,
+				BE950BE82CED8C6A000635D6 /* FetchedData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -132,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				963EE9C52CE785910097D509 /* NetworkingStatus.swift */,
+				BE950BE62CED866C000635D6 /* Status.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -140,7 +150,8 @@
 			isa = PBXGroup;
 			children = (
 				963EE9D02CE87A910097D509 /* MyBackground.swift */,
-				963EE9C92CE86D640097D509 /* Feedback.swift */,
+				963EE9C92CE86D640097D509 /* NetworkFeedback.swift */,
+				BE950BE42CED8654000635D6 /* Feedback.swift */,
 			);
 			path = UIComponents;
 			sourceTree = "<group>";
@@ -218,12 +229,15 @@
 			files = (
 				963EE9C12CE784540097D509 /* Currency.swift in Sources */,
 				963EE9D12CE87A910097D509 /* MyBackground.swift in Sources */,
+				BE950BE52CED8654000635D6 /* Feedback.swift in Sources */,
 				963EE9B02CE772FC0097D509 /* ConverterView.swift in Sources */,
 				963EE9D32CE8804D0097D509 /* ExchangeRatesView.swift in Sources */,
 				963EE9D92CE8948E0097D509 /* FileService.swift in Sources */,
 				963EE9D72CE887A40097D509 /* FetchService.swift in Sources */,
-				963EE9CA2CE86D640097D509 /* Feedback.swift in Sources */,
+				963EE9CA2CE86D640097D509 /* NetworkFeedback.swift in Sources */,
+				BE950BE92CED8C6A000635D6 /* FetchedData.swift in Sources */,
 				963EE9D52CE882DD0097D509 /* ExchangeRatesViewModel.swift in Sources */,
+				BE950BE72CED866C000635D6 /* Status.swift in Sources */,
 				963EE9C32CE784890097D509 /* ConverterViewModel.swift in Sources */,
 				963EE9C62CE785910097D509 /* NetworkingStatus.swift in Sources */,
 				963EE9AE2CE772FC0097D509 /* Tymex_Currency_ConverterApp.swift in Sources */,
@@ -363,11 +377,13 @@
 				DEVELOPMENT_TEAM = 4B2UGH94B5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Tymex-Currency-Converter-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -392,11 +408,13 @@
 				DEVELOPMENT_TEAM = 4B2UGH94B5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Tymex-Currency-Converter-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

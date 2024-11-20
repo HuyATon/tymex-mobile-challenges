@@ -11,71 +11,40 @@ struct ConverterView: View {
     
     @State private var inputAmount = ""
     @State private var iconAnimated = false
-    
     @State private var source = "USD"
     @State private var dest = "VND"
-    
     @State private var output = ""
-    
     @FocusState private var isFocused: Bool
     
     @StateObject var converterVM = ConverterViewModel()
+    @State private var isReload = false
     
     var body: some View {
         NavigationStack {
             GeometryReader { geo in
                 VStack {
-                
                     Text("Tymex Converter")
                         .font(.title)
                         .foregroundStyle(.brandTint)
                         .fontWeight(.black)
                         
                     VStack(spacing: 10) {
-                        
                         sourceCurrency(geo: geo)
-                        
                         swapButton
-                        
                         destCurrency(geo: geo)
                     }
                     .padding(.vertical)
                     
                     reloadSection
                     
-                    
                     NavigationLink {
-                        
-                        ExchangeRatesView(exchangeRateVM: ExchangeRatesViewModel(fetchedData: FetchService.shared.fetch()!))
-                        
+                        ExchangeRatesView(exchangeRateVM: ExchangeRatesViewModel(fetchedData: converterVM.fetchedData))
                     } label: {
                         Label("Currency Stats", systemImage: "chart.bar.xaxis")
-                        
                     }
-                    
                     Spacer()
                     
-                    Button {
-                        isFocused.toggle()
-                        
-                        output = String(format: "%.2f", converterVM.convert(amount: inputAmount, source: source, dest: dest))
-                        
-                        
-                    } label: {
-                        
-                        Text("Convert")
-                            .frame(maxWidth: .infinity)
-                            .padding()
-                            .bold()
-                            .font(.title3)
-                            .background(.indigo.gradient)
-                            .foregroundStyle(.white)
-                            .clipShape(.rect(cornerRadius: 15.0))
-                    }
-                    .opacity(isFocused ? 1.0 : 0)
-                    .animation(/*@START_MENU_TOKEN@*/.easeIn/*@END_MENU_TOKEN@*/, value: isFocused)
-                    
-                    
+                    convertButton
                 }
                 .padding()
                 .background {
@@ -89,12 +58,13 @@ struct ConverterView: View {
                             isFocused.toggle()
                         }
                         .padding()
-
                 }
             }
             .overlay {
-                
-                Feedback(message: $converterVM.message, status: $converterVM.status)
+                NetworkFeedback(message: $converterVM.networkMessage, status: $converterVM.networkStatus)
+            }
+            .overlay(alignment: .top) {
+                Feedback(message: $converterVM.statusMessage, status: $converterVM.status)
             }
             .task {
                 if !converterVM.fetched {
@@ -189,18 +159,49 @@ struct ConverterView: View {
             Spacer()
             
             Button {
-                
+                Task {
+                    isReload = true
+                    await converterVM.fetchNewestData()
+                }
+                DispatchQueue.main.asyncAfter(deadline: .now() + 10, execute: {
+                    isReload = false
+                })
             } label: {
                 Image(systemName: "arrow.counterclockwise")
                     .padding(10)
                     .bold()
-                    .background(.brandTint)
+                    .background(isReload ? Color.secondary : .indigo)
                     .clipShape(.circle)
                     .foregroundStyle(.white)
                     .symbolEffect(.variableColor)
+                    .overlay(Circle().stroke(lineWidth: 3.0).foregroundStyle(.white))
             }
-            
+            .disabled(isReload)
+            .animation(.easeInOut, value: isReload)
         }
+    }
+    
+    var convertButton: some View {
+        Button {
+            isFocused.toggle()
+            output = String(format: "%.1f", converterVM.convert(amount: inputAmount, source: source, dest: dest))
+        } label: {
+            
+            Text("Convert")
+                .frame(maxWidth: .infinity)
+                .padding()
+                .bold()
+                .font(.title3)
+                .background(.indigo.gradient)
+                .foregroundStyle(.white)
+                .clipShape(.rect(cornerRadius: 15.0))
+                .overlay {
+                    RoundedRectangle(cornerRadius: 15.0)
+                        .stroke(.white, lineWidth: 3.0)
+                }
+        }
+        .opacity(isFocused ? 1.0 : 0)
+        .animation(/*@START_MENU_TOKEN@*/.easeIn/*@END_MENU_TOKEN@*/, value: isFocused)
     }
 }
 

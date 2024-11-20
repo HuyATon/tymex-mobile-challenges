@@ -41,33 +41,11 @@ class FetchService {
         baseUrl = "https://api.exchangeratesapi.io/v1/latest"
         apiKey = "0b54dbd730ea7ea1e70690296a25f8e6"
         baseCurrency = "EUR"
-        
-        
     }
     
     var apiUrlString: String {
         
         return baseUrl + "?access_key=\(apiKey)&base=\(baseCurrency)"
-    }
-    
-    func fetch() -> FetchedData? {
-        
-        let decoder = JSONDecoder()
-        
-        
-        if let url = Bundle.main.url(forResource: "data", withExtension: "json"),
-           let data = try? Data(contentsOf: url) {
-            
-            do {
-                let decodedData = try decoder.decode(FetchedData.self, from: data)
-                return decodedData
-            }
-            catch {
-                return nil
-            }
-        }
-        
-        return nil
     }
     
     func fetchData()  async throws  -> FetchedData?{
@@ -90,8 +68,28 @@ class FetchService {
         catch {
             throw error
         }
-        
     }
+    
+    // MARK: used only for preview
+        func fetch() -> FetchedData? {
+    
+            let decoder = JSONDecoder()
+    
+    
+            if let url = Bundle.main.url(forResource: "data", withExtension: "json"),
+               let data = try? Data(contentsOf: url) {
+    
+                do {
+                    let decodedData = try decoder.decode(FetchedData.self, from: data)
+                    return decodedData
+                }
+                catch {
+                    return nil
+                }
+            }
+    
+            return nil
+        }
     
     
 }

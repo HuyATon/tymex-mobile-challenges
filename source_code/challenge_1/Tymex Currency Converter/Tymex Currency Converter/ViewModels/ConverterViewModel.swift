@@ -12,13 +12,29 @@ class ConverterViewModel: ObservableObject {
     
     
     @Published var fetchedData: FetchedData? = nil
-    @Published var status: NetworkingStatus = .notStarted
-    @Published var message = ""
-    @Published var fetched = false
+    @Published var networkStatus: NetworkingStatus = .notStarted
+    @Published var networkMessage: String
+    @Published var status: Status
+    @Published var statusMessage: String
+    @Published var fetched: Bool
     
-    let fetcher = FetchService.shared
+    let fetcher: FetchService
+    let fileService: FileService
+    let fileName: String
     
-    
+    init() {
+        fetchedData = nil
+        networkStatus = .notStarted
+        networkMessage = ""
+        status = .notStarted
+        statusMessage = ""
+        fetched = false
+        
+        fetcher = FetchService.shared
+        fileService = FileService.shared
+        fileName = "fetched_data.json"
+    }
+    // Computed Properties
     var updatedTime: Date? {
         if let timestamp = fetchedData?.timestamp {
             
@@ -27,29 +43,60 @@ class ConverterViewModel: ObservableObject {
         return nil
     }
     
+    // Methods
     func fetchNewestData() async {
         do {
-            status = .loading
+            networkStatus = .loading
             fetchedData = try await fetcher.fetchData()
-            status = .successful
-            message = "Successfully update newest data"
+            networkStatus = .successful
+            networkMessage = "Successfully update newest data"
             fetched = true
+            
+            saveFetchedData(fetchedData: fetchedData!)
         }
         catch {
+            networkStatus = .failed
+            networkMessage = error.localizedDescription
+            
+            readMostRecentData()
+        }
+    }
+    
+    func saveFetchedData(fetchedData: FetchedData) {
+        let encoder = JSONEncoder()
+        
+        do {
+            let data = try encoder.encode(fetchedData)
+            fileService.writeToFile(fileName: self.fileName, data: data)
+        }
+        catch {
+            print(error.localizedDescription)
+        }
+    }
+    
+    func readMostRecentData() {
+        let decoder = JSONDecoder()
+        if let data = fileService.readDataFromFile(fileName: self.fileName),
+           let decodedData = try? decoder.decode(FetchedData.self, from: data) {
+            fetchedData = decodedData
+            status = .successful
+            statusMessage = "Read from most recentl records."
+            fetched = true
+        }
+        else {
             status = .failed
-            message = error.localizedDescription
+            statusMessage = "Can not read data from local file"
         }
     }
     
     
-    func getCurrencyValue(_ currency: String) -> Double {
+    func getCurrencyValue(_ currency: String) -> Double? {
         
         if let value = fetchedData?.rates[currency] {
             return value
         }
         
-        return 0
-        
+        return nil
     }
     
     func getSortedAvailableCurrency() -> [String] {
@@ -63,23 +110,23 @@ class ConverterViewModel: ObservableObject {
     
     
     func convert(amount: String, source: String, dest: String) -> Double {
-        
-        // MARK: Formula: amount / source * dest
-        // x USD -> VND: x / (EUR / USD) * (EUR / VND) = x USD / VND
-        
-        
-        if let value = Double(amount),
-           let data = self.fetchedData{
-            
-            let source_base = getCurrencyValue(source)
-            let dest_base = getCurrencyValue(dest)
-            
-            return value / source_base * dest_base
-        }
-        else {
+        guard let validAmount = Double(amount) else {
+            status = .failed
+            statusMessage = "Input format is invalid!"
             return 0
         }
         
+        guard let sourceValue = getCurrencyValue(source),
+              let destValue = getCurrencyValue(dest) else {
+            status = .failed
+            statusMessage = "Currency in from/to is invalid"
+            return 0
+        }
+        
+        let sourceCurrency = Currency(name: source, value: sourceValue)
+        let destCurrency = Currency(name: dest, value: destValue)
+        
+        return sourceCurrency.convertTo(destCurrency, withAmount: validAmount)
     }
     
 }

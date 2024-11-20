@@ -22,56 +22,87 @@ struct ExchangeRatesView: View {
         GeometryReader { geo in
         
             VStack {
-                
-                HStack {
-                    Button {
-                        dismiss()
-                    } label: {
-                        Image(systemName: "chevron.left")
-                    }
-                    Text("Exchange Rate compared to \(exchangeRateVM.baseCurrency)")
-                        .font(.title2)
-                        .bold()
-                        .foregroundStyle(.brandTint)
-                    Spacer()
-                }
-               
+                header
                 Spacer()
-                
-                HStack {
-                    Spacer()
-                    HStack {
-                        Text("Sort by: ").font(.headline)
-                        Button {
-                            exchangeRateVM.showLowestRate.toggle()
-                        } label: {
-                            Image(systemName: exchangeRateVM.showLowestRate ? "arrowshape.up.fill" : "arrowshape.down.fill")
-                                .symbolEffect(.bounce, value: exchangeRateVM.showLowestRate)
-                        }
+                if currencies.count > 0 {
+                    VStack {
+                        title
+                        sorter
+                        chart(geo: geo)
                     }
-                    .padding(10)
+                    .padding()
                     .background(.ultraThinMaterial)
-                    .clipShape(.rect(cornerRadius: 15))
+                    .clipShape(.rect(cornerRadius: 15.0))
                 }
-                Chart {
-                    ForEach(0...4, id: \.self) { index in
-                        BarMark(x: .value("Currency", currencies[index].name), y: .value("", currencies[index].value))
-                            .foregroundStyle(.brandTint)
-                            .annotation {
-                                Text(String(format: "%.1f", currencies[index].value))
-                                    .font(.caption)
-                            }
-                    }
+                else {
+                    ContentUnavailableView("Data is not available", systemImage: "network.slash")
                 }
-                .animation(.easeInOut, value: exchangeRateVM.showLowestRate)
-                .frame(height: geo.size.height * 0.6)
-                .padding(.bottom)
-                
+                Spacer()
+
             }
             .padding()
         }
         .tint(.brandTint)
         .navigationBarBackButtonHidden()
+        .background(MyBackground())
+    }
+    
+    var header: some View {
+        HStack {
+            Button {
+                dismiss()
+            } label: {
+                Image(systemName: "chevron.left")
+                    .imageScale(.large)
+                    .bold()
+                    .padding(.trailing)
+            }
+            Text("Currency Stats")
+                .font(.title2)
+                .bold()
+                .foregroundStyle(.brandTint)
+            Spacer()
+        }
+    }
+    
+    var title: some View {
+        Text("Exchange Rates for \(exchangeRateVM.baseCurrency)")
+            .bold()
+            .font(.title3)
+    }
+    
+    var sorter: some View {
+        HStack {
+            Spacer()
+            HStack {
+                Text("Sort:")
+                Button {
+                    exchangeRateVM.showLowestRate.toggle()
+                } label: {
+                    Image(systemName: exchangeRateVM.showLowestRate ? "arrowshape.up.fill" : "arrowshape.down.fill")
+                        .symbolEffect(.bounce, value: exchangeRateVM.showLowestRate)
+                }
+            }
+            .padding(10)
+            .background(.ultraThinMaterial)
+            .clipShape(.rect(cornerRadius: 15))
+        }
+    }
+    
+    func chart(geo: GeometryProxy) -> some View {
+        Chart {
+            ForEach(0...4, id: \.self) { index in
+                BarMark(x: .value("Currency", currencies[index].name), y: .value("", currencies[index].value))
+                    .foregroundStyle(.brandTint)
+                    .annotation {
+                        Text(String(format: "%.1f", currencies[index].value))
+                            .font(.caption)
+                    }
+            }
+        }
+        .animation(.easeInOut, value: exchangeRateVM.showLowestRate)
+        .frame(height: geo.size.height * 0.4)
+        .padding(.bottom)
     }
 }
 

@@ -51,6 +51,7 @@ class FileService {
         let writePath = createDocumentFilePath(fileName: fileName)
         do {
             try data.write(to: writePath)
+            print("Writed data to file: \(fileName)")
         }
         catch {
             print(error.localizedDescription)
