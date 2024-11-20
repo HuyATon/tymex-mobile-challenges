@@ -44,48 +44,49 @@ class ConverterViewModel: ObservableObject {
     }
     
     // Methods
-    func fetchNewestData() async {
+    func fetchNewestData(urlString: String) async {
         do {
             networkStatus = .loading
-            fetchedData = try await fetcher.fetchData()
+            fetchedData = try await fetcher.fetchData(urlString: urlString)
             networkStatus = .successful
             networkMessage = "Successfully update newest data"
             fetched = true
             
-            saveFetchedData(fetchedData: fetchedData!)
+            saveFetchedData(fetchedData: fetchedData!, toFile: self.fileName)
         }
         catch {
             networkStatus = .failed
             networkMessage = error.localizedDescription
             
-            readMostRecentData()
+            self.fetchedData = readMostRecentData(fromFile: self.fileName)
         }
     }
     
-    func saveFetchedData(fetchedData: FetchedData) {
+    func saveFetchedData(fetchedData: FetchedData, toFile fileName: String) {
         let encoder = JSONEncoder()
         
         do {
             let data = try encoder.encode(fetchedData)
-            fileService.writeToFile(fileName: self.fileName, data: data)
+            fileService.writeToFile(fileName: fileName, data: data)
         }
         catch {
             print(error.localizedDescription)
         }
     }
     
-    func readMostRecentData() {
+    func readMostRecentData(fromFile fileName: String) -> FetchedData? {
         let decoder = JSONDecoder()
-        if let data = fileService.readDataFromFile(fileName: self.fileName),
+        if let data = fileService.readDataFromFile(fileName: fileName),
            let decodedData = try? decoder.decode(FetchedData.self, from: data) {
-            fetchedData = decodedData
             status = .successful
             statusMessage = "Read from most recentl records."
             fetched = true
+            return decodedData
         }
         else {
             status = .failed
             statusMessage = "Can not read data from local file"
+            return nil
         }
     }
     

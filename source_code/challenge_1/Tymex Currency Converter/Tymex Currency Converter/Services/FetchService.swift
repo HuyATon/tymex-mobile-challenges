@@ -29,7 +29,6 @@ class FetchService {
         
     }
     
-    
     static let shared = FetchService()
     
     let baseUrl: String
@@ -48,9 +47,9 @@ class FetchService {
         return baseUrl + "?access_key=\(apiKey)&base=\(baseCurrency)"
     }
     
-    func fetchData()  async throws  -> FetchedData?{
+    func fetchData(urlString: String)  async throws  -> FetchedData?{
         
-        guard let url = URL(string: self.apiUrlString) else {
+        guard let url = URL(string: urlString) else {
             throw APIError.badUrl
         }
         
@@ -70,11 +69,10 @@ class FetchService {
         }
     }
     
-    // MARK: used only for preview
+    // MARK: used only for preview purpose
         func fetch() -> FetchedData? {
     
             let decoder = JSONDecoder()
-    
     
             if let url = Bundle.main.url(forResource: "data", withExtension: "json"),
                let data = try? Data(contentsOf: url) {
@@ -90,6 +88,4 @@ class FetchService {
     
             return nil
         }
-    
-    
 }

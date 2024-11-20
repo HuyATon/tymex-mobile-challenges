@@ -24,7 +24,21 @@
 		BE950BE52CED8654000635D6 /* Feedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE950BE42CED8654000635D6 /* Feedback.swift */; };
 		BE950BE72CED866C000635D6 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE950BE62CED866C000635D6 /* Status.swift */; };
 		BE950BE92CED8C6A000635D6 /* FetchedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE950BE82CED8C6A000635D6 /* FetchedData.swift */; };
+		BE950BF32CEDC2E8000635D6 /* CurrencyTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE950BF22CEDC2E8000635D6 /* CurrencyTest.swift */; };
+		BE950BFA2CEDC6A1000635D6 /* FileServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE950BF92CEDC6A1000635D6 /* FileServiceTest.swift */; };
+		BE950BFC2CEDCCEA000635D6 /* FetchServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE950BFB2CEDCCEA000635D6 /* FetchServiceTest.swift */; };
+		BE950BFE2CEDDBC0000635D6 /* ConverterViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE950BFD2CEDDBC0000635D6 /* ConverterViewModelTest.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BE950BF42CEDC2E8000635D6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 963EE9A22CE772FC0097D509 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 963EE9A92CE772FC0097D509;
+			remoteInfo = "Tymex Currency Converter";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		963EE9AA2CE772FC0097D509 /* Tymex Currency Converter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tymex Currency Converter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -46,10 +60,22 @@
 		BE950BE42CED8654000635D6 /* Feedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feedback.swift; sourceTree = "<group>"; };
 		BE950BE62CED866C000635D6 /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		BE950BE82CED8C6A000635D6 /* FetchedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchedData.swift; sourceTree = "<group>"; };
+		BE950BF02CEDC2E8000635D6 /* Tymex Currency ConverterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tymex Currency ConverterTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE950BF22CEDC2E8000635D6 /* CurrencyTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyTest.swift; sourceTree = "<group>"; };
+		BE950BF92CEDC6A1000635D6 /* FileServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileServiceTest.swift; sourceTree = "<group>"; };
+		BE950BFB2CEDCCEA000635D6 /* FetchServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchServiceTest.swift; sourceTree = "<group>"; };
+		BE950BFD2CEDDBC0000635D6 /* ConverterViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverterViewModelTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		963EE9A72CE772FC0097D509 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE950BED2CEDC2E8000635D6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -63,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				963EE9AC2CE772FC0097D509 /* Tymex Currency Converter */,
+				BE950BF12CEDC2E8000635D6 /* Tymex Currency ConverterTests */,
 				963EE9AB2CE772FC0097D509 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -71,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				963EE9AA2CE772FC0097D509 /* Tymex Currency Converter.app */,
+				BE950BF02CEDC2E8000635D6 /* Tymex Currency ConverterTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -156,6 +184,17 @@
 			path = UIComponents;
 			sourceTree = "<group>";
 		};
+		BE950BF12CEDC2E8000635D6 /* Tymex Currency ConverterTests */ = {
+			isa = PBXGroup;
+			children = (
+				BE950BF22CEDC2E8000635D6 /* CurrencyTest.swift */,
+				BE950BF92CEDC6A1000635D6 /* FileServiceTest.swift */,
+				BE950BFB2CEDCCEA000635D6 /* FetchServiceTest.swift */,
+				BE950BFD2CEDDBC0000635D6 /* ConverterViewModelTest.swift */,
+			);
+			path = "Tymex Currency ConverterTests";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -176,6 +215,24 @@
 			productReference = 963EE9AA2CE772FC0097D509 /* Tymex Currency Converter.app */;
 			productType = "com.apple.product-type.application";
 		};
+		BE950BEF2CEDC2E8000635D6 /* Tymex Currency ConverterTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BE950BF62CEDC2E8000635D6 /* Build configuration list for PBXNativeTarget "Tymex Currency ConverterTests" */;
+			buildPhases = (
+				BE950BEC2CEDC2E8000635D6 /* Sources */,
+				BE950BED2CEDC2E8000635D6 /* Frameworks */,
+				BE950BEE2CEDC2E8000635D6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BE950BF52CEDC2E8000635D6 /* PBXTargetDependency */,
+			);
+			name = "Tymex Currency ConverterTests";
+			productName = "Tymex Currency ConverterTests";
+			productReference = BE950BF02CEDC2E8000635D6 /* Tymex Currency ConverterTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -183,11 +240,15 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1540;
+				LastSwiftUpdateCheck = 1520;
 				LastUpgradeCheck = 1540;
 				TargetAttributes = {
 					963EE9A92CE772FC0097D509 = {
 						CreatedOnToolsVersion = 15.4;
+					};
+					BE950BEF2CEDC2E8000635D6 = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = 963EE9A92CE772FC0097D509;
 					};
 				};
 			};
@@ -205,6 +266,7 @@
 			projectRoot = "";
 			targets = (
 				963EE9A92CE772FC0097D509 /* Tymex Currency Converter */,
+				BE950BEF2CEDC2E8000635D6 /* Tymex Currency ConverterTests */,
 			);
 		};
 /* End PBXProject section */
@@ -217,6 +279,13 @@
 				963EE9B52CE772FD0097D509 /* Preview Assets.xcassets in Resources */,
 				963EE9C82CE837880097D509 /* data.json in Resources */,
 				963EE9B22CE772FD0097D509 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE950BEE2CEDC2E8000635D6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,7 +313,26 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BE950BEC2CEDC2E8000635D6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE950BF32CEDC2E8000635D6 /* CurrencyTest.swift in Sources */,
+				BE950BFA2CEDC6A1000635D6 /* FileServiceTest.swift in Sources */,
+				BE950BFC2CEDCCEA000635D6 /* FetchServiceTest.swift in Sources */,
+				BE950BFE2CEDDBC0000635D6 /* ConverterViewModelTest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BE950BF52CEDC2E8000635D6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 963EE9A92CE772FC0097D509 /* Tymex Currency Converter */;
+			targetProxy = BE950BF42CEDC2E8000635D6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		963EE9B62CE772FD0097D509 /* Debug */ = {
@@ -428,6 +516,42 @@
 			};
 			name = Release;
 		};
+		BE950BF72CEDC2E8000635D6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.learning.Tymex-Currency-ConverterTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tymex Currency Converter.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Tymex Currency Converter";
+			};
+			name = Debug;
+		};
+		BE950BF82CEDC2E8000635D6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.learning.Tymex-Currency-ConverterTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tymex Currency Converter.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Tymex Currency Converter";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -445,6 +569,15 @@
 			buildConfigurations = (
 				963EE9B92CE772FD0097D509 /* Debug */,
 				963EE9BA2CE772FD0097D509 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BE950BF62CEDC2E8000635D6 /* Build configuration list for PBXNativeTarget "Tymex Currency ConverterTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BE950BF72CEDC2E8000635D6 /* Debug */,
+				BE950BF82CEDC2E8000635D6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

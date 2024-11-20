@@ -30,6 +30,4 @@ class ExchangeRatesViewModel: ObservableObject {
     var sortedCurrencies: [Currency] {
         self.currencies.sorted { showLowestRate ? $0.value < $1.value : $0.value > $1.value }
     }
-    
-    
 }

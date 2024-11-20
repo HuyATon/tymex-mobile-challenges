@@ -15,3 +15,9 @@ struct FetchedData: Codable {
     let date: String
     let rates: [String: Double]
 }
+
+
+extension FetchedData {
+    
+    static let mock: FetchedData = FetchService.shared.fetch()!
+}

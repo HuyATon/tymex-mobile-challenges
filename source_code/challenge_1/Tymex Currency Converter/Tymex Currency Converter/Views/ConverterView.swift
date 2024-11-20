@@ -68,7 +68,7 @@ struct ConverterView: View {
             }
             .task {
                 if !converterVM.fetched {
-                    await converterVM.fetchNewestData()
+                    await converterVM.fetchNewestData(urlString: converterVM.fetcher.apiUrlString)
                 }
             }
         .tint(Color.brandTint)
@@ -161,7 +161,7 @@ struct ConverterView: View {
             Button {
                 Task {
                     isReload = true
-                    await converterVM.fetchNewestData()
+                    await converterVM.fetchNewestData(urlString: converterVM.fetcher.apiUrlString)
                 }
                 DispatchQueue.main.asyncAfter(deadline: .now() + 10, execute: {
                     isReload = false
