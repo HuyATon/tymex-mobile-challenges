@@ -96,7 +96,7 @@ struct ConverterView: View {
             
             Spacer()
         
-            TextField("Enter amount ...", text: $inputAmount)
+            TextField("Enter value", text: $inputAmount)
                 .keyboardType(.decimalPad)
                 .focused($isFocused)
                 .frame(maxWidth: geo.size.width * 0.3, alignment: .leading)

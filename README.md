@@ -51,3 +51,13 @@
 - I believe that this app would be more wonderful if it has a additional feature like having a figure for time-series changes in exchange rates for each currencies. At first, I did plan to add this feature but the API is not available for free subscription.
 
 ## 4. Demonstration Video
+
+**URL**: https://youtu.be/_xjAq3FyfHM
+
+<table>
+<tr>
+    <td><img src="./assets/screen_1.PNG" width="400px"></td>
+    <td><img src="./assets/screen_2.PNG" width="400px"></td>
+
+</tr>
+</table>

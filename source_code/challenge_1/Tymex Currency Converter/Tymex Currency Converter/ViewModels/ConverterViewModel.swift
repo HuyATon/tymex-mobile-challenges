@@ -79,7 +79,7 @@ class ConverterViewModel: ObservableObject {
         if let data = fileService.readDataFromFile(fileName: fileName),
            let decodedData = try? decoder.decode(FetchedData.self, from: data) {
             status = .successful
-            statusMessage = "Read from most recentl records."
+            statusMessage = "Read from most recent records."
             fetched = true
             return decodedData
         }
